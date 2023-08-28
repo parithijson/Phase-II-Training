@@ -1,0 +1,14 @@
+<div class="converter-container">
+  <h2>Temperature Converter</h2>
+  <div class="input-container">
+    <input [(ngModel)]="inputTemperature" type="number" placeholder="Enter temperature" />
+    <select [(ngModel)]="selectedUnit">
+      <option value="celsius">Celsius</option>
+      <option value="fahrenheit">Fahrenheit</option>
+    </select>
+    <button (click)="convertTemperature()">Convert</button>
+  </div>
+  <div class="result-container" *ngIf="convertedTemperature !== null">
+    {{ inputTemperature }} {{ selectedUnit | uppercase }} is {{ convertedTemperature }} {{ targetUnit | uppercase }}
+  </div>
+</div>
